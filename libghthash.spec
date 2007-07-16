@@ -1,18 +1,16 @@
-%define	major 0
+%define	major 1
 %define libname	%mklibname ghthash %{major}
+%define develname %mklibname ghthash -d
 
 Summary:	Generic Hash Table library
 Name:		libghthash
-Version:	0.6.1
+Version:	0.6.2
 Release:	%mkrel 1
 Group:		System/Libraries
 License:	GPL
 URL:		http://www.ipd.bth.se/ska/sim_home/libghthash.html
 Source0:	http://www.ipd.bth.se/ska/sim_home/filer/%{name}-%{version}.tar.bz2
-BuildRequires:	autoconf2.5
-BuildRequires:	automake1.7
-BuildRequires:	libtool
-BuildRoot:	%{_tmppath}/%{name}-%{version}-root
+BuildRoot:	%{_tmppath}/%{name}-%{version}-buildroot
 
 %description
 The GHT (Generic Hash Table) library is a hash table
@@ -22,7 +20,7 @@ etc), and easy to understand codewise.
 
 %package -n	%{libname}
 Summary:	Generic Hash Table library
-Group:          System/Libraries
+Group:		System/Libraries
 
 %description -n	%{libname}
 The GHT (Generic Hash Table) library is a hash table
@@ -30,16 +28,17 @@ implementation in C for storing arbitrary types of data. It is
 meant to be small, easily extensible (in terms of hash functions
 etc), and easy to understand codewise.
 
-%package -n	%{libname}-devel
+%package -n	%{develname}
 Summary:	Static library and header files for the Generic Hash Table library
 Group:		Development/C
-Provides:	ghthash-devel = %{version}
-Provides:	libghthash-devel = %{version}
+Provides:	ghthash-devel = %{version}-%{release}
+Provides:	%{name}-devel = %{version}-%{release}
 Obsoletes:	ghthash-devel libghthash-devel
 Obsoletes:	%{mklibname ghthash 2}-devel
-Requires:	%{libname} = %{version}
+Requires:	%{libname} = %{version}-%{release}
+Obsoletes:	%mklibname ghthash 0 -d
 
-%description -n	%{libname}-devel
+%description -n	%{develname}
 The GHT (Generic Hash Table) library is a hash table
 implementation in C for storing arbitrary types of data. It is
 meant to be small, easily extensible (in terms of hash functions
@@ -50,11 +49,11 @@ files.
 
 %prep
 
-%setup -q -n %{name}-%{version}
+%setup -q
 
 %build
 rm -f configure
-libtoolize --copy --force; aclocal-1.7; autoconf; automake-1.7 --add-missing --copy --foreign; autoconf
+libtoolize --copy --force; aclocal; autoconf; automake --add-missing --copy --foreign; autoconf
 
 %configure2_5x
 
@@ -81,9 +80,9 @@ popd
 %files -n %{libname}
 %defattr(-,root,root)
 %doc AUTHORS ChangeLog README
-%{_libdir}/*.so.*
+%{_libdir}/*.so.%{major}*
 
-%files -n %{libname}-devel
+%files -n %{develname}
 %defattr(-,root,root)
 %doc examples html TODO
 %{_includedir}/*
@@ -91,5 +90,3 @@ popd
 %{_libdir}/*.a
 %{_libdir}/*.la
 %{_mandir}/man3/*
-
-
