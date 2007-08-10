@@ -5,7 +5,7 @@
 Summary:	Generic Hash Table library
 Name:		libghthash
 Version:	0.6.2
-Release:	%mkrel 1
+Release:	%mkrel 2
 Group:		System/Libraries
 License:	GPL
 URL:		http://www.ipd.bth.se/ska/sim_home/libghthash.html
@@ -36,7 +36,7 @@ Provides:	%{name}-devel = %{version}-%{release}
 Obsoletes:	ghthash-devel libghthash-devel
 Obsoletes:	%{mklibname ghthash 2}-devel
 Requires:	%{libname} = %{version}-%{release}
-Obsoletes:	%mklibname ghthash 0 -d
+Obsoletes:	%{mklibname ghthash 0}-devel
 
 %description -n	%{develname}
 The GHT (Generic Hash Table) library is a hash table
