@@ -10,7 +10,6 @@ Group:		System/Libraries
 License:	GPL
 URL:		http://www.ipd.bth.se/ska/sim_home/libghthash.html
 Source0:	http://www.ipd.bth.se/ska/sim_home/filer/%{name}-%{version}.tar.bz2
-BuildRoot:	%{_tmppath}/%{name}-%{version}-buildroot
 
 %description
 The GHT (Generic Hash Table) library is a hash table
