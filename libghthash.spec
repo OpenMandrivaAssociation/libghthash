@@ -10,7 +10,6 @@ Group:		System/Libraries
 License:	GPL
 URL:		http://www.ipd.bth.se/ska/sim_home/libghthash.html
 Source0:	http://www.ipd.bth.se/ska/sim_home/filer/%{name}-%{version}.tar.bz2
-BuildRoot:	%{_tmppath}/%{name}-%{version}-buildroot
 
 %description
 The GHT (Generic Hash Table) library is a hash table
@@ -60,8 +59,6 @@ libtoolize --copy --force; aclocal; autoconf; automake --add-missing --copy --fo
 %make
 
 %install
-[ "%{buildroot}" != "/" ] && rm -rf %{buildroot}
-
 %makeinstall_std
 
 # cleanup
@@ -69,17 +66,6 @@ pushd examples
     make clean
     rm -f Makefile.win
 popd
-
-%if %mdkversion < 200900
-%post -n %{libname} -p /sbin/ldconfig
-%endif
-
-%if %mdkversion < 200900
-%postun -n %{libname} -p /sbin/ldconfig
-%endif
-
-%clean
-[ "%{buildroot}" != "/" ] && rm -rf %{buildroot}
 
 %files -n %{libname}
 %defattr(-,root,root)
