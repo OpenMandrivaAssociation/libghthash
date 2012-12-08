@@ -78,5 +78,66 @@ popd
 %{_includedir}/*
 %{_libdir}/*.so
 %{_libdir}/*.a
-%{_libdir}/*.la
 %{_mandir}/man3/*
+
+
+%changelog
+* Fri Apr 29 2011 Oden Eriksson <oeriksson@mandriva.com> 0.6.2-9mdv2011.0
++ Revision: 660253
+- mass rebuild
+
+* Sun Nov 28 2010 Oden Eriksson <oeriksson@mandriva.com> 0.6.2-8mdv2011.0
++ Revision: 602549
+- rebuild
+
+* Tue Mar 16 2010 Oden Eriksson <oeriksson@mandriva.com> 0.6.2-7mdv2010.1
++ Revision: 520812
+- rebuilt for 2010.1
+
+* Wed Sep 02 2009 Christophe Fergeau <cfergeau@mandriva.com> 0.6.2-6mdv2010.0
++ Revision: 425547
+- rebuild
+
+* Tue Jun 17 2008 Thierry Vignaud <tv@mandriva.org> 0.6.2-5mdv2009.0
++ Revision: 222571
+- rebuild
+
+  + Pixel <pixel@mandriva.com>
+    - do not call ldconfig in %%post/%%postun, it is now handled by filetriggers
+
+* Sun Jan 13 2008 Thierry Vignaud <tv@mandriva.org> 0.6.2-4mdv2008.1
++ Revision: 150567
+- rebuild
+- kill re-definition of %%buildroot on Pixel's request
+
+  + Olivier Blin <oblin@mandriva.com>
+    - restore BuildRoot
+
+* Fri Aug 10 2007 Oden Eriksson <oeriksson@mandriva.com> 0.6.2-3mdv2008.0
++ Revision: 61509
+- try to fix build (take #2)
+
+* Fri Aug 10 2007 Oden Eriksson <oeriksson@mandriva.com> 0.6.2-2mdv2008.0
++ Revision: 61407
+- try to fix build (take #1)
+
+* Mon Jul 16 2007 Tomasz Pawel Gajc <tpg@mandriva.org> 0.6.2-1mdv2008.0
++ Revision: 52462
+- new version
+- new devel library policy
+- drop buildrequires on old autotools
+- fix mixture of tabs and spaces
+
+
+* Wed Nov 01 2006 Oden Eriksson <oeriksson@mandriva.com> 0.6.1-1mdv2007.0
++ Revision: 74840
+- 0.6.1
+- Import libghthash
+
+* Fri Jun 02 2006 Oden Eriksson <oeriksson@mandriva.com> 0.6.0-1mdv2007.0
+- 0.6.0
+- major change...
+
+* Sat Jul 23 2005 Oden Eriksson <oeriksson@mandriva.com> 0.5.6-1mdk
+- initial Mandriva package
+
