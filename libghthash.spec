@@ -10,6 +10,7 @@ Group:		System/Libraries
 License:	GPL
 URL:		http://www.ipd.bth.se/ska/sim_home/libghthash.html
 Source0:	http://www.ipd.bth.se/ska/sim_home/filer/%{name}-%{version}.tar.bz2
+Patch0:		libghthash-automake-1.13.patch
 
 %description
 The GHT (Generic Hash Table) library is a hash table
@@ -47,8 +48,8 @@ This package contains the static libghthash library and its header
 files.
 
 %prep
-
 %setup -q
+%apply_patches
 
 %build
 rm -f configure

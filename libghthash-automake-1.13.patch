@@ -1,0 +1,24 @@
+--- libghthash-0.6.2/configure.in.bero	2013-01-15 23:28:28.669165808 +0100
++++ libghthash-0.6.2/configure.in	2013-01-15 23:29:01.595770411 +0100
+@@ -1,7 +1,7 @@
+ # -*- sh -*- (looks nicer that way!)
+ # This is the configure.in script for libghthash.
+ 
+-AC_INIT(src/hash_table.c)
++AC_INIT(libghthash, 0.6.2)
+ 
+ # Check for sizes of different types
+ AC_DEFUN([GET_SIZEOF],
+@@ -84,10 +84,10 @@ AC_SUBST(LT_REVISION)
+ AC_SUBST(LT_AGE)
+ 
+ #automake configuration
+-AM_INIT_AUTOMAKE(libghthash, $VERSION)
++AM_INIT_AUTOMAKE
+ 
+ #autoheader configuration
+-AM_CONFIG_HEADER(config.h)
++AC_CONFIG_HEADERS([config.h])
+ 
+ #check for programs
+ AC_PROG_CC()
