@@ -5,7 +5,7 @@
 Summary:	Generic Hash Table library
 Name:		libghthash
 Version:	0.6.2
-Release:	13
+Release:	14
 Group:		System/Libraries
 License:	GPLv2
 Url:		http://www.ipd.bth.se/ska/sim_home/libghthash.html
