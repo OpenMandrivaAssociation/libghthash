@@ -41,7 +41,7 @@ files.
 
 %prep
 %setup -q
-%apply_patches
+%autopatch -p1
 rm -f configure
 libtoolize --copy --force; aclocal; autoconf; automake --add-missing --copy --foreign; autoconf
 
