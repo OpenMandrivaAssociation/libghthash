@@ -8,7 +8,7 @@ Version:	0.6.2
 Release:	19
 Group:		System/Libraries
 License:	GPLv2
-Url:		http://www.ipd.bth.se/ska/sim_home/libghthash.html
+Url:		https://www.ipd.bth.se/ska/sim_home/libghthash.html
 Source0:	http://www.ipd.bth.se/ska/sim_home/filer/%{name}-%{version}.tar.bz2
 Patch0:		libghthash-automake-1.13.patch
 
