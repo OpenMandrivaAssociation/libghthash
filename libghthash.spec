@@ -12,6 +12,11 @@ Url:		https://www.ipd.bth.se/ska/sim_home/libghthash.html
 Source0:	http://www.ipd.bth.se/ska/sim_home/filer/%{name}-%{version}.tar.bz2
 Patch0:		libghthash-automake-1.13.patch
 
+BuildRequires:	autoconf
+BuildRequires:	automake
+BuildRequires:	libtool-base
+BuildRequires:	slibtool
+BuildRequires:	make
 %description
 The GHT (Generic Hash Table) library is a hash table
 implementation in C for storing arbitrary types of data. It is
